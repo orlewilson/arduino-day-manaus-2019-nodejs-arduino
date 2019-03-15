@@ -4,7 +4,7 @@
   Facilitador:       Orlewilson Bentes Maia
   Data Criacao:      14/03/2019
   Data Atualizacao:  14/03/2019
-  Descricao:         Projeto 03 – Mini Estação Meteorológica - NodeJS + Web
+  Descricao:         Projeto 02 – Mini Estação Meteorológica - NodeJS + Web
 */
 
 
