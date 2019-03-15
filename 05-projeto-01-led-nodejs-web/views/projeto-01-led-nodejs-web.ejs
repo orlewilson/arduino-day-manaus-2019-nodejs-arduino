@@ -1,0 +1,53 @@
+<!--
+  Oficina Como Criar Coisas Inteligentes com NodeJS e Arduino
+  Arduino Day Manaus 2019 - 16/03/2019
+  Facilitador:       Orlewilson Bentes Maia
+  Data Criacao:      14/03/2019
+  Data Atualizacao:  14/03/2019
+  Descricao:         Ligar/desligar LED com NodeJS + Página Web
+-->
+
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Ligar/desligar LED com NodeJS + Página Web</title>
+
+      <!-- importando estilo-->
+      <link href="main.css" rel="stylesheet" type="text/css">
+
+      <!-- importando bibliotecas -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
+      
+      <!-- script para comunicar com o servidor -->
+      <script>
+         // criando socket para conversar com o NodeJS
+         var socket = io();
+         
+         // aguarda alguma resposta do servidor
+         socket.on('respostaLed', function (data) {
+            // atualiza na página web se o LED foi ligado ou desligado
+            document.getElementById('estadoLed').innerHTML = data; 
+         });
+
+         // função para ligar LED
+         function ligar(){
+            // envia mensagem para ligar LED
+            socket.emit('ligar','');
+         }
+
+         // função para desligar LED
+         function desligar(){
+            // envia mensagem para desligar LED
+            socket.emit('desligar','');
+         }
+      </script>
+
+   </head>
+   <body>
+      <h1>Ligar/desligar LED com NodeJS + Página Web</h1>
+      <p>Estado do LED: <span id="estadoLed">não sei</span></p>
+      <br/>
+      <button id="ligar" type="button" onclick="ligar()">Ligar</button>
+      <button id="desligar" type="button" onclick="desligar()">Desligar</button>
+   </body>
+</html> 

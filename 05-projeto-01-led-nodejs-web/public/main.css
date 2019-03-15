@@ -1,0 +1,13 @@
+#estadoLed {
+    color: green;
+    font-size: 14pt;
+    font-weight: bold;
+}
+
+#ligar {
+    background-color: blue;
+}
+
+#desligar {
+    background-color: red;
+}
